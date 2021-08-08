@@ -1,5 +1,6 @@
 @import url(@ibm/plex/css/ibm-plex.css);
 
+/* Document layout */
 html, body {
     padding: 0;
     margin: 0;
@@ -7,4 +8,48 @@ html, body {
 
 html {
     font-family: 'IBM Plex Sans';
+    font-size: 18px;
+
+    background-color: #f9f7f6;
+    color: #000000;
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 80ch;
+}
+
+header {
+    margin-bottom: 5em;
+    line-height: 200%;
+}
+
+header img {
+    height: 2em;
+    vertical-align: middle;
+    image-rendering: crisp-edges;
+}
+
+footer {
+    margin-top: 5em;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #525252;
+}
+
+/* Standard elements */
+h1, h2 {
+    margin: 0 0 1em 0;
+    padding: 0;
+}
+
+a {
+    color: #345678;
+}
+
+p {
+    text-align: justify;
+    padding: 0;
+    margin: 0 0 1em 0;
 }
