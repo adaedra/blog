@@ -10,9 +10,17 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm install
       - run: npx webpack
+      - uses: actions/upload-artifact@v2
+        with:
+          name: webpack
+          path: static/dist
   build-zola:
     name: Build Zola site
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: docker run --rm -v $(pwd):/work -w /work 'balthek/zola:0.14.0' build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: zola
+          path: public
