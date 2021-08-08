@@ -2,10 +2,17 @@ name: Build
 on: push
 
 jobs:
-  build:
+  build-webpack:
+    name: Build Webpack assets
     runs-on: ubuntu-latest
     container: 'node:lts'
     steps:
       - uses: actions/checkout@v2
       - run: npm install
       - run: npx webpack
+  build-zola:
+    name: Build Zola site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker run --rm -v $(pwd):/work -w /work 'balthek/zola:0.14.0' build
